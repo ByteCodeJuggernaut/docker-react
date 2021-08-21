@@ -5,3 +5,10 @@ beofore_install:
   - docker build -t 1ebowski/docker-react -f Dockerfile.dev .
 script:
   - docker run 1ebowski/docker-react npm run test -- --coverage
+deploy:
+  provider: heroku
+  api_key:
+    secure: "00189860-4217-4e0c-a4a7-4147d5b9c3be"
+  app: docker-react-app-123
+  on:
+    branch: main
